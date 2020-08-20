@@ -8,6 +8,9 @@ import S1OwnOrRent from "./components/S1OwnOrRent";
 import S3AboutYourHome from "./components/S3AboutYourHomeSize";
 import S2AboutYourHomeType from "./components/S2AboutYourHomeType";
 import S4AboutYourHomeInsurance from "./components/S4AboutYourHomeInsurance";
+import StepWizard from "react-step-wizard";
+import S5ClaimedAnyThing from "./components/S5ClaimedAnyThing";
+
 class App extends Component {
 
 
@@ -29,11 +32,12 @@ class App extends Component {
 						</div>
 					</div>
 					<div className="row">
-						<div className="col">
-							<S1OwnOrRent />
-							<S2AboutYourHomeType />
-							<S3AboutYourHome />
-							<S4AboutYourHomeInsurance />
+						<div className="col"> 
+								<S1OwnOrRent />
+								<S2AboutYourHomeType />
+								<S3AboutYourHome />
+								<S4AboutYourHomeInsurance /> 
+								<S5ClaimedAnyThing />
 						</div>
 					</div>
 				</div>
