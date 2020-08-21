@@ -5,12 +5,13 @@ import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "antd/dist/antd.css";
 import Logo from './Assets/logo.png';
 import S1OwnOrRent from "./components/S1OwnOrRent";
-import S3AboutYourHome from "./components/S3AboutYourHomeSize";
-import S2AboutYourHomeType from "./components/S2AboutYourHomeType";
-import S4AboutYourHomeInsurance from "./components/S4AboutYourHomeInsurance";
-import StepWizard from "react-step-wizard";
-import S5ClaimedAnyThing from "./components/S5ClaimedAnyThing";
-
+// import S3AboutYourHome from "./components/S3AboutYourHomeSize";
+import S3HomeType from "./components/S3HomeType";
+// import S4AboutYourHomeInsurance from "./components/S4AboutYourHomeInsurance";
+// import StepWizard from "react-step-wizard";
+// import S5ClaimedAnyThing from "./components/S5ClaimedAnyThing";
+import S2HomeYear from "./components/S2HomeYear";
+import StepWizard from 'react-step-wizard';
 class App extends Component {
 
 
@@ -33,11 +34,11 @@ class App extends Component {
 					</div>
 					<div className="row">
 						<div className="col"> 
-								<S1OwnOrRent />
-								<S2AboutYourHomeType />
-								<S3AboutYourHome />
-								<S4AboutYourHomeInsurance /> 
-								<S5ClaimedAnyThing />
+								<StepWizard initialStep={1} >
+									<S1OwnOrRent />
+									<S2HomeYear /> 
+									<S3HomeType /> 
+								</StepWizard> 
 						</div>
 					</div>
 				</div>
