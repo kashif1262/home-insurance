@@ -1,54 +1,39 @@
 import React, { Component } from 'react';
-import { Form, Select, Button,Tooltip } from 'antd';
+import { Form, Button,Tooltip } from 'antd';
 import {ArrowLeftOutlined} from '@ant-design/icons';
-const { Option } = Select;
+//const { Option } = Select;
 class S2HomeYear extends Component {
     state = {
         years: "",
         stateName: ""
+    
+    }; 
+   
+    CreateHomeYearBoxes = () =>{ 
+        let i=0;
+            const arr =[]; 
+            for( i = 2019; i>=1992 ; i--){
+                arr.push(
+                    <div  className="col-1 p-2" key={i}>
+                        <Button
+                            value={i}
+                            className="btn btn-outline-primary text-center btn-font"
+                            onClick={()=>{this.moveNext()}}
+                        >
+                        {i}
+                        </Button>
+                    </div>
+                );
+            } 
+            console.log(arr); 
+            return arr; 
+    }
+
+    moveNext = () => {
+		this.props.nextStep(); 
     };
-
-    // createHomeYearBoxes = () =>{
-    //     const arr =[];
-
-    //     for (let i = this.state.years.maxYear; i> this.state.years.maxYear - 24; i--){
-    //         arr.push(
-    //             <div className="col-3 p-2" key={i}>
-    //                 <button
-    //                     value={i}
-    //                     className="btn btn-outline-primary text-center btn-font"
-    //                     style={{width: "100%"}}
-    //                     onClick={e=>this.moveNext(e)}
-    //                 >
-    //                     {i}
-    //                 </button>
-    //             </div>
-    //         );
-    //     }
-
-    //     return arr;
-
-    // }
-
-    // createHomeYearSelect =()=>{
-    //     const arr =[];
-    //     for(let i = this.state.years.maxYear -24; i>= this.state.years.minYear; i--){
-    //         <Option className="p-0" key={i} value={i}>
-    //             <input
-    //             type ="button"
-    //             className="select-bg"
-    //             value={i}
-    //             onClick={this.moveNext}                
-    //             />
-    //         </Option>
-    //     }
-    //     return arr;
-    // }
-
-    // moveNext =(e)=>{
-    //     this.props.nextStep(); 
-    // }
-
+    
+    
 
     render() {
         return (
@@ -66,13 +51,11 @@ class S2HomeYear extends Component {
             <div className=" d-flex" style={{ minHeight: "70vh" }} >
                 <div class="card-body  d-flex justify-content-center align-items-center" align="center">
                     <Form >
-                        <h3>Tell Me a Little Bit About Your Home Type</h3>
-                        <Form.Item>
+                        <h3>Tell Me a Little Bit About Your Home Type</h3> 
                             <h5>When Was Your House Built</h5>
-                            <Button onClick={this.props.nextStep} className="offset-1" type="primary" >
-                                2019
-                        </Button>
-                        </Form.Item>
+                            <div className="row"> 
+                                 {this.CreateHomeYearBoxes()}  
+                            </div>
                     </Form>
                 </div>
             </div>
@@ -82,3 +65,50 @@ class S2HomeYear extends Component {
 }
 
 export default S2HomeYear;
+ 
+
+
+
+ 
+  // createHomeYearBoxes = () =>{
+    //     let i=0;
+    //     const arr =[]; 
+    //     for( i = 2019; i>=2015 ; i--){
+    //         arr.push(
+    //             <div className="" key={i}>
+    //                 <Button
+    //                     value={i}
+    //                     className="btn btn-outline-primary text-center btn-font"
+    //                     onClick={(e)=>this.moveNext(e)}
+    //                 >
+    //                    button {i}
+    //                 </Button>
+    //             </div>
+    //         );
+    //     } 
+    //     console.log(arr); 
+    //     return arr; 
+    // }
+
+    
+
+   
+
+    // createHomeYearSelect =()=>{
+    //     const arr =[];
+    //     for(let i = 2019; i>=1992 ; i--){
+    //         <Option className="p-0" key={i} value={i}>
+    //             <input
+    //             type ="button"
+    //             className="select-bg"
+    //             value={i}
+    //             onClick={this.moveNext}                
+    //             />
+    //         </Option>
+    //     }
+    //     return arr;
+    // }
+
+    // moveNext =(e)=>{
+    //     this.props.nextStep(); 
+    // }
