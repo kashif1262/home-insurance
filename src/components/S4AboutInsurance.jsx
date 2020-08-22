@@ -1,34 +1,29 @@
 import React, { Component } from 'react';
-import { Button, Form, Tooltip } from 'antd';
+import { Button,Select, Form, Tooltip } from 'antd';
 import { ArrowLeftOutlined } from '@ant-design/icons';
 import { Switch } from 'antd';
 import { CloseOutlined, CheckOutlined } from '@ant-design/icons';
+const {Option} = Select;
 
-
-class S6AboutInsurance extends Component {
+class S4AboutInsurance extends Component {
     state = {
 
     }
 
-    CreateCompanyNameBoxes = () => {
+    CreateCompanyNameSelect = () => {
         let i = 0;
         const arr = [];
         for (i = 500; i <= 5200; i += 100) {
             arr.push(
-                <div className="col-1 p-2 w-25" key={1}>
-                    <Button
-                        size="large"
-                        value={i}
-                        className=" w-100 btn btn-outline-primary text-center btn-font"
-                        onClick={() => { this.moveNext() }}
-                    >
-                        {i}
-                    </Button>
-                </div>
+                <Option className="p-0 text-center" key={1} value={i}> 
+                    {i} 
+                </Option>
             );
         }
         return arr;
     }
+
+ 
 
     moveNext = () => {
         this.props.nextStep();
@@ -60,13 +55,29 @@ class S6AboutInsurance extends Component {
                                 Are You Currently Insured? 
                                 </h5>
                                 <div className="row d-flex justify-content-center align-items-center" align="center">
-                                    <Switch /><br />
-                                    
-                                </div>
-                              
-                                <Button className="m-2" onClick={()=>{this.moveNext()}}>
-                                        Next
-                                    </Button>
+                                    <Switch /><br /> 
+                                </div> 
+                            </Form.Item>
+                            <Form.Item>
+                                <h5>
+                                Current Insurance Company
+                                </h5>
+                                <Select 
+                                    size="large"
+                                    placeholder="Company Not Listed"
+                                    optionFilterProp="children"
+                                    filterOption={(input, option) =>
+                                        option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                                    }
+
+                                >
+                                    {this.CreateCompanyNameSelect()}
+                                </Select>
+                            </Form.Item>
+                            <Form.Item >
+                                <Button onClick={()=>this.moveNext()} type="primary" htmlType="submit" block size="large">
+                                    Next
+                                </Button>
                             </Form.Item>
                         </Form>
                     </div>
@@ -77,4 +88,4 @@ class S6AboutInsurance extends Component {
     }
 }
 
-export default S6AboutInsurance;
+export default S4AboutInsurance;
