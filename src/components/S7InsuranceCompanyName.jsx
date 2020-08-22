@@ -5,7 +5,7 @@ import { Switch } from 'antd';
 import { CloseOutlined, CheckOutlined } from '@ant-design/icons';
 
 
-class S6AboutInsurance extends Component {
+class S7InsuranceCompanyName extends Component {
     state = {
 
     }
@@ -56,14 +56,14 @@ class S6AboutInsurance extends Component {
                                 <h3>
                                     Tell Me a Little Bit About Your Home Insurance
                                 </h3>
+                               
                                 <h5>
-                                Are You Currently Insured? 
+                                Current Insurance Company
                                 </h5>
                                 <div className="row d-flex justify-content-center align-items-center" align="center">
-                                    <Switch /><br />
+                                   {this.CreateCompanyNameBoxes()}
                                     
                                 </div>
-                              
                                 <Button className="m-2" onClick={()=>{this.moveNext()}}>
                                         Next
                                     </Button>
@@ -77,4 +77,4 @@ class S6AboutInsurance extends Component {
     }
 }
 
-export default S6AboutInsurance;
+export default S7InsuranceCompanyName;

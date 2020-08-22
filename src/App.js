@@ -10,6 +10,7 @@ import StepWizard from 'react-step-wizard';
 import S4NumberOfStories from './components/S4NumberOfStories';
 import S5HouseSize from "./components/S5HouseSize";
 import S6InsuredOrNot from "./components/S6AboutInsurance";
+import S7InsuranceCompanyName from "./components/S7InsuranceCompanyName";
 
 class App extends Component {
 
@@ -40,6 +41,8 @@ class App extends Component {
 									<S4NumberOfStories /> 
 									<S5HouseSize />
 									<S6InsuredOrNot />
+									
+									<S7InsuranceCompanyName />
 								</StepWizard> 
 						</div>
 					</div>
