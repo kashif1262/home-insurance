@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import {Form, Input,Tooltip,Button} from 'antd';
-import {ArrowLeftOutlined} from '@ant-design/icons';
-
+import { Form, Input, Button,Select } from 'antd';
+import CommonComponents from './CommonComponents';
+const {Option} =Select;
 
 class S8Personalnfo extends Component {
     state={
@@ -15,18 +15,7 @@ class S8Personalnfo extends Component {
     render() {
         return (
             <div className="card shadow-lg" style={{minHeight:"80vh"}}>
-                <div className="flex-row d-inline-flex justify-content-between">
-                    <div className="p-2">
-                        <Tooltip title="back">
-                            <Button type="primary" shape="circle" onClick={this.props.previousStep} icon={<ArrowLeftOutlined />} />
-                        </Tooltip>
-                    </div>
-                    <div className="p-2">
-                        <h4>
-                            {this.props.currentStep}/{this.props.totalSteps}
-                        </h4>
-                    </div>
-                </div>
+               <CommonComponents currentStep={this.props.currentStep} totalSteps={this.props.totalSteps} previousStep={this.props.previousStep} />
                 <div className="d-flex" style={{minHeight: "70vh"}}>
                     <div className="card-body d-flex justify-content-center align-items-center" align="center" >
                         <Form className="w-50" >
@@ -37,14 +26,18 @@ class S8Personalnfo extends Component {
                                 <h5>
                                     Date Of Birth
                                 </h5>  
-                                <Input size="large" placeholder="" /> 
+                                <Input size="large" placeholder="Date Of Birth" /> 
                             </Form.Item>
                             <Form.Item>
                                 <h5>
                                     Gender       
                                 </h5>
                                 
-                                <Input size="large" placeholder=""  />
+                                <Select size="large" placeholder="Select An Option"  >
+                                    <Option>Male</Option>
+                                    <Option>Female</Option>
+                                    <Option>Non Binary</Option>
+                                </Select>
                             </Form.Item>
                             <Form.Item>
                                     <Button onClick={()=>{this.moveNext()}} type="primary" htmlType="submit" block size="large">

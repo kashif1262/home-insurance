@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Button,Select, Form, Tooltip } from 'antd';
-import { ArrowLeftOutlined } from '@ant-design/icons';
-import { Switch } from 'antd';
-import { CloseOutlined, CheckOutlined } from '@ant-design/icons';
+import { Form, Select, Button } from 'antd';
+import CommonComponents from './CommonComponents';
+import { Switch } from 'antd'; 
 const {Option} = Select;
 
 class S4AboutInsurance extends Component {
@@ -32,21 +31,10 @@ class S4AboutInsurance extends Component {
     render() {
         return (
             <div className="card shadow-lg" style={{ minHeight: "80vh" }}>
-                <div className="flex-row d-inline-flex justify-content-between">
-                    <div className="p-2">
-                        <Tooltip title="back">
-                            <Button type="primary" shape="circle" onClick={this.props.previousStep} icon={<ArrowLeftOutlined />} />
-                        </Tooltip>
-                    </div>
-                    <div className="p-2">
-                        <h4>
-                            {this.props.currentStep}/{this.props.totalSteps}
-                        </h4>
-                    </div>
-                </div>
+                <CommonComponents currentStep={this.props.currentStep} totalSteps={this.props.totalSteps} previousStep={this.props.previousStep} />
                 <div className=" d-flex" style={{ minHeight: "70vh" }}>
                     <div className=" card-body d-flex justify-content-center align-items-center" align="center">
-                        <Form>
+                        <Form className="w-50">
                             <Form.Item>
                                 <h3>
                                     Tell Me a Little Bit About Your Home Insurance
