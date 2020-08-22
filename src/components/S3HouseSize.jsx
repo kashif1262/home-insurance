@@ -107,8 +107,7 @@ class S3HouseSize extends Component {
                             </Form.Item>
                         </Form>
                     </div>
-                </div>
-                
+                </div> 
             </div>
         );
     }
