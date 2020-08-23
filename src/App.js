@@ -25,7 +25,8 @@ class App extends Component {
 			houseSizeInSquareFeet:'',
 			insuredOrNot:false,
 			currentInsuranceCompany:'',
-			claimedAnything:0
+			claimedAnything:0,
+			howMany:''
 		},
 		personalInfo:{
 			firstName:'',
@@ -43,8 +44,7 @@ class App extends Component {
 	}
 
 	componentDidMount = () => {
-		// var LeadiDscript = document.getElementById('LeadiDscript_campaign');
-		// console.log(LeadiDscript)
+		console.log(this.state);
 	};
 
 	render() {
@@ -63,8 +63,7 @@ class App extends Component {
 						<div className="col"> 
 								<StepWizard initialStep={1} >
 									<S1OwnOrRent 
-										ownOrRent=
-										{this.state.postData.ownOrRent}
+										ownOrRent={this.state.postData.ownOrRent}
 										setOwnOrRent=
 										{
 											(value)=>
@@ -78,15 +77,224 @@ class App extends Component {
 											}
 										} 
 									/> 
-									<S2HomeType />  
-									<S3HouseSize />
-									<S4AboutInsurance />
-									<S5ClaimedAnything /> 
-									<S6Personalnfo />
-									<S7Personalnfo />
-									<S8Personalnfo />
-									<S9Personalnfo />
-									<S10Personalnfo />
+									<S2HomeType
+										houseBuiltYear={this.state.postData.houseBuiltYear}
+										typeOfProperty={this.state.postData.typeOfProperty}
+										setHouseBuiltYear=
+										{
+											(year)=>{
+												this.setState({
+													postData:{
+														houseBuiltYear:year
+													}
+												});
+												console.log(year);
+											}
+										}
+										setTypeOfProperty=
+										{
+											(type)=>{
+												this.setState({
+													postData:{
+														typeOfProperty:type
+													}
+												});
+												console.log(type);
+											}
+										}
+									/>  
+									<S3HouseSize
+										houseSizeInSquareFeet={this.state.postData.houseSizeInSquareFeet}
+										numberOfStroies={this.state.postData.numberOfStroies}
+										setHouseSizeInSquareFeet={
+											(value)=>{
+												this.setState({
+													postData:{
+														houseSizeInSquareFeet:value
+													}
+												})
+												console.log(value);
+											}
+										}
+										setNumberOfStroies={
+											(value)=>{
+												this.setState({
+													postData:{
+														numberOfStroies:value
+													}
+												})
+												console.log(value);
+											}
+										}
+									/>
+									<S4AboutInsurance
+										insuredOrNot={this.state.postData.insuredOrNot}
+										currentInsuranceCompany={this.state.postData.currentInsuranceCompany}
+										setinsuredOrNot={
+											(value)=>{
+												this.setState({
+													postData:{
+														insuredOrNot:value
+													}
+												})
+												console.log(value);
+											}
+										}
+										setcurrentInsuranceCompany={
+											(value)=>{
+												this.setState({
+													postData:{
+														currentInsuranceCompany:value
+													}
+												})
+												console.log(value);
+											}
+										}
+									/>
+									<S5ClaimedAnything 
+										claimedAnything={this.state.postData.claimedAnything}
+										howMany={this.state.postData.howMany}
+										setclaimedAnything={
+											(value)=>{
+												this.setState({
+													postData:{
+														claimedAnything:value
+													}
+												})
+												console.log(value);
+											}
+										}
+										sethowMany={
+											(value)=>{
+												this.setState({
+													postData:{
+														howMany:value
+													}
+												})
+												console.log(value);
+											}
+										}
+									/> 
+									<S6Personalnfo 
+										firstName={this.state.postData.firstName}
+										lastName={this.state.postData.lastName}
+										setFirstName={
+											(value)=>{
+												this.setState({
+													personalInfo:{
+														firstName:value
+													}
+												})
+												console.log(value);
+											}
+										}
+										setLastName={
+											(value)=>{
+												this.setState({
+													personalInfo:{
+														lastName:value
+													}
+												})
+												console.log(value);
+											}
+										}
+									/>
+									<S7Personalnfo 
+										phone={this.state.personalInfo.phone}
+										email={this.state.personalInfo.email}
+										setPhone={
+											(value)=>{
+												this.setState({
+													personalInfo:{
+														phone:value 
+													}
+												})
+												console.log(value);
+											}
+										} 
+										setEmail={
+											(value)=>{
+												this.setState({
+													personalInfo:{
+														email: value
+													}
+												})
+												console.log(value);
+											}
+										}
+									/>
+									<S8Personalnfo 
+										dateOfBirth={this.state.personalInfo.dateOfBirth}
+										gender={this.state.personalInfo.gender}
+										setDateOfBirth={
+											(value)=>{
+												this.setState({
+													personalInfo:{
+														dateOfBirth: value
+													}
+												})
+												console.log(value);
+											}
+										} 
+										setGender={
+											(value)=>{
+												this.setState({
+													personalInfo:{
+														gender:value
+													}
+												})
+												console.log(value);
+											}
+										}
+									/>
+									<S9Personalnfo 
+										zipCode={this.state.postData}
+										address={this.state.postData}
+										setZipCode={
+											(value)=>{
+												this.setState({
+													personalInfo:{
+														zipCode:value
+													}
+												})
+												console.log(value);
+											}
+										}
+										setAddress={
+											(value)=>{
+												this.setState({
+													personalInfo:{
+														address:value
+													}
+												})
+												console.log(value);
+											}
+										}
+									/>
+									<S10Personalnfo 
+										city={this.state.personalInfo.city}
+										craditRating={this.state.personalInfo.craditRating}
+										setCity={
+											(value)=>{
+												this.setState({
+													personalInfo:{
+														city:value
+													}
+												})
+												console.log(value);
+											}
+										}
+										setCraditRating={
+											(value)=>{
+												this.setState({
+													personalInfo:{
+														craditRating:value
+													}
+												})
+												console.log(value);
+											}
+										}
+									/>
 									
 									<S11ConformSubmission />
 								</StepWizard> 

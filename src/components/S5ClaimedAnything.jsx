@@ -36,7 +36,7 @@ class S5ClaimedAnything extends Component {
                                     Almost There!
                                 </h3>
                                 <h5>
-                                    have You Cliaimed Anything Over The Past 3 years
+                                    have You Claimed Anything Over The Past 3 years
                                 </h5> 
                                 <div className="row d-flex justify-content-center align-items-center" align="center">
                                     <Switch /><br />
