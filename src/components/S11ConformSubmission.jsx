@@ -9,7 +9,7 @@ class S11ConformSubmission extends Component {
     }
 
     moveNext = () => {
-        this.props.nextStep();
+        this.props.lastStep();
     }
 
     render() {

@@ -3,10 +3,22 @@ import { Form, Select, Button } from 'antd';
 import CommonComponents from './CommonComponents';
 const {Option} = Select;
 class S1OwnOrRent extends Component {
-
+    constructor(props) {
+        super(props);
+        this.state={
+            val:""
+        };
+    }
+    
+    
+    
     onFinish = () => {
         this.props.nextStep()
     };
+
+    handleChange=(value)=>{ 
+        this.props.setOwnOrRent(value); 
+    }
 
     render() {
         return (
@@ -17,15 +29,20 @@ class S1OwnOrRent extends Component {
                         <Form className="w-50" onFinish={this.onFinish}>
                             <h3>Do You Own Or Rent</h3>
                             <Form.Item>
-                                <Select placeholder="Select An Option" size="large" >
+                                <Select 
+                                    placeholder="Select An Option"  
+                                    onChange={this.handleChange} 
+                                    size="large" 
+                                >
                                     <Option value="i-own">I Own</Option>
                                     <Option value="i-rent">I Rent</Option>
                                 </Select>
                             </Form.Item>
-                            <Form.Item >
+
+                            <Form.Item >  
                                 <Button type="primary" htmlType="submit" block size="large">
                                     Next
-                            </Button>
+                                </Button>
                             </Form.Item>
                         </Form>
                     </div> 

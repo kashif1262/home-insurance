@@ -16,7 +16,31 @@ import S9Personalnfo from "./components/S9Personalnfo";
 import S10Personalnfo from "./components/S10Personalnfo";
 import S11ConformSubmission from './components/S11ConformSubmission';
 class App extends Component {
+	state={
+		postData:{
+			ownOrRent:"",
+			houseBuiltYear:"",
+			typeOfProperty:"",
+			numberOfStroies:"",
+			houseSizeInSquareFeet:'',
+			insuredOrNot:false,
+			currentInsuranceCompany:'',
+			claimedAnything:0
+		},
+		personalInfo:{
+			firstName:'',
+			lastName:'',
+			phone:'',
+			email:'',
+			address:'',
+			zipCode:'',
+			city:'',
+			dateOfBirth:'',
+			gender:'',
+			craditRating:''
+		}
 
+	}
 
 	componentDidMount = () => {
 		// var LeadiDscript = document.getElementById('LeadiDscript_campaign');
@@ -38,7 +62,22 @@ class App extends Component {
 					<div className="row">
 						<div className="col"> 
 								<StepWizard initialStep={1} >
-									<S1OwnOrRent /> 
+									<S1OwnOrRent 
+										ownOrRent=
+										{this.state.postData.ownOrRent}
+										setOwnOrRent=
+										{
+											(value)=>
+											{
+												this.setState({
+													postData:{
+														ownOrRent:value
+													}
+												})
+												console.log(value);
+											}
+										} 
+									/> 
 									<S2HomeType />  
 									<S3HouseSize />
 									<S4AboutInsurance />

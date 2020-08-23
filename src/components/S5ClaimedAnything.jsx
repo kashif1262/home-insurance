@@ -48,19 +48,18 @@ class S5ClaimedAnything extends Component {
                                 </h5>
                                 <Select 
                                     size="large"
-                                    placeholder=""
+                                    placeholder="Select An Option"
                                     optionFilterProp="children"
                                     filterOption={ (input,option) => option.children.toLowerCase.indexOf(input.toLowerCase()) >= 0
-
                                     }
                                 >
                                     {this.CreateHowManySelect()}
                                 </Select>
                             </Form.Item>
                             <Form.Item>
-                                    <Button onClick={()=>{this.moveNext()}} type="primary" htmlType="submit" block size="large">
-                                        Next
-                                    </Button>
+                                <Button onClick={()=>{this.moveNext()}} type="primary" htmlType="submit" block size="large">
+                                    Next
+                                </Button>
                             </Form.Item>
                         </Form>
                     </div>

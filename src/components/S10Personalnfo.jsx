@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Form, Input, Button } from 'antd';
+import { Form, Input,Select, Button } from 'antd';
 import CommonComponents from './CommonComponents';
-
+const {Option}=Select;
 
 class S10Personalnfo extends Component {
     state={
@@ -32,7 +32,12 @@ class S10Personalnfo extends Component {
                                 <h5>
                                     Credit Rating       
                                 </h5>
-                                <Input size="large" placeholder="Credit Rating"  />
+                                <Select size="large" placeholder="Credit Rating">
+                                    <Option>Average</Option>
+                                    <Option>Poor</Option>
+                                    <Option>Good</Option>
+                                    <Option>Excellent</Option>
+                                </Select>
                             </Form.Item>
                             <Form.Item>
                                     <Button onClick={()=>{this.moveNext()}} type="primary" htmlType="submit" block size="large">
