@@ -12,13 +12,20 @@ class S8Personalnfo extends Component {
     CreateDateOfBirthSelect = () => {
         return (
             <Space className="w-100 text-center" direction="vertical" size={12} >
-                <DatePicker className="w-100 text-center"   size="large" defaultValue={moment('2015/01/01', dateFormat)} format={dateFormat} />  
+                <DatePicker onChange={this.handleChangeDOB} className="w-100 text-center"   size="large" defaultValue={moment('2015/01/01', dateFormat)} format={dateFormat} />  
             </Space>
         );
     }
 
     moveNext = () => {
         this.props.nextStep();
+    }
+
+    handleChangeDOB = (value) => {
+        this.props.setDateOfBirth(value);
+    }
+    handleChangeGender = (value) => {
+        this.props.setGender(value);
     }
 
     render() {
@@ -42,10 +49,10 @@ class S8Personalnfo extends Component {
                                     Gender
                                 </h5>
 
-                                <Select size="large" placeholder="Select An Option"  >
-                                    <Option>Male</Option>
-                                    <Option>Female</Option>
-                                    <Option>Non Binary</Option>
+                                <Select onChange={this.handleChangeGender} size="large" placeholder="Select An Option"  >
+                                    <Option value="male">Male</Option>
+                                    <Option value="female">Female</Option>
+                                    <Option  value="non-binary">Non Binary</Option>
                                 </Select>
                             </Form.Item>
                             <Form.Item>

@@ -22,29 +22,24 @@ class S3HouseSize extends Component {
 
     CreateNumberOfStoriesSelect = () => {
         const arr = [];
-        for (let i = 1; i <= 4; i++) {
+        for (let j = 1; j <= 4; j++) {
             arr.push(
-                 <Option className="p-0 text-center" key={i} value={i}>
-                     {i}
+                 <Option className="p-0 text-center" key={j} value={j}>
+                     {j}
                  </Option>
             )
-        }
-        const specific = () => {
-            return ( 
-                    <Option 
-                        className="p-0 text-center" key="1" Value="2 (Popular)"
-                      
-                    >
-                        2 (Popular)
-                    </Option> 
-            )
-        }
-        arr[1]= specific();
+        } 
         return arr;
     }
 
     moveNext=()=>{
         this.props.nextStep();
+    }
+    handleChangeSize = (value) => {
+        this.props.setHouseSizeInSquareFeet(value);
+    }
+    handleChangeStories = (value) => {
+        this.props.setNumberOfStroies(value);
     }
 
     render() {
@@ -64,6 +59,7 @@ class S3HouseSize extends Component {
                                 <Select 
                                     size="large"
                                     placeholder="Number Of Stories"
+                                    onChange={this.handleChangeStories}
                                     optionFilterProp="children"
                                     filterOption={(input, option) =>
                                         option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
@@ -80,6 +76,7 @@ class S3HouseSize extends Component {
                                 <Select 
                                     size="large"
                                     placeholder="House Size"
+                                    onChange={this.handleChangeSize}
                                     optionFilterProp="children"
                                     filterOption={(input, option) =>
                                         option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0

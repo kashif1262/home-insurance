@@ -12,6 +12,13 @@ class S10Personalnfo extends Component {
         this.props.nextStep();
     }
 
+    handleChangeCity = (value) => {
+        this.props.setCity(value);
+    }
+    handleChangeCraditRating = (value) => {
+        this.props.setCraditRating(value);
+    }
+
     render() {
         return (
             <div className="card shadow-lg" style={{minHeight:"80vh"}}>
@@ -26,17 +33,17 @@ class S10Personalnfo extends Component {
                                 <h5>
                                     City
                                 </h5>  
-                                <Input size="large" placeholder="City" /> 
+                                <Input onChange={this.handleChangeCity} size="large" placeholder="City" /> 
                             </Form.Item>
                             <Form.Item>
                                 <h5>
                                     Credit Rating       
                                 </h5>
-                                <Select size="large" placeholder="Credit Rating">
-                                    <Option>Average</Option>
-                                    <Option>Poor</Option>
-                                    <Option>Good</Option>
-                                    <Option>Excellent</Option>
+                                <Select onChange={this.handleChangeCraditRating} size="large" placeholder="Credit Rating">
+                                    <Option value="average" >Average</Option>
+                                    <Option value="poor" >Poor</Option>
+                                    <Option value="Good" >Good</Option>
+                                    <Option value="excellent" >Excellent</Option>
                                 </Select>
                             </Form.Item>
                             <Form.Item>

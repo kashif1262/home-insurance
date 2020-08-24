@@ -295,9 +295,8 @@ class App extends Component {
 											}
 										}
 									/>
-									
-									<S11ConformSubmission />
-								</StepWizard> 
+								<S11ConformSubmission />
+							</StepWizard> 
 						</div>
 					</div>
 				</div>

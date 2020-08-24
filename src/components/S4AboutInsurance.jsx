@@ -14,7 +14,7 @@ class S4AboutInsurance extends Component {
         const arr = [];
         for (i = 500; i <= 5200; i += 100) {
             arr.push(
-                <Option className="p-0 text-center" key={1} value={i}> 
+                <Option className="p-0 text-center" key={i} value={i}> 
                     {i} 
                 </Option>
             );
@@ -26,6 +26,13 @@ class S4AboutInsurance extends Component {
 
     moveNext = () => {
         this.props.nextStep();
+    }
+
+    handleChangeInsured = (value) => {
+        this.props.setinsuredOrNot(value);
+    }
+    handleChangeCompany = (value) => {
+        this.props.setcurrentInsuranceCompany(value);
     }
 
     render() {
@@ -43,7 +50,7 @@ class S4AboutInsurance extends Component {
                                 Are You Currently Insured? 
                                 </h5>
                                 <div className="row d-flex justify-content-center align-items-center" align="center">
-                                    <Switch /><br /> 
+                                    <Switch onChange={this.handleChangeInsured} /><br /> 
                                 </div> 
                             </Form.Item>
                             <Form.Item>
@@ -53,6 +60,7 @@ class S4AboutInsurance extends Component {
                                 <Select 
                                     size="large"
                                     placeholder="Company Not Listed"
+                                    onChange={this.handleChangeCompany}
                                     optionFilterProp="children"
                                     filterOption={(input, option) =>
                                         option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0

@@ -23,6 +23,13 @@ class S5ClaimedAnything extends Component {
     moveNext=()=>{
         this.props.nextStep();
     }
+
+    handleChangeClaimedAnything = (value) => {
+        this.props.setclaimedAnything(value);
+    }
+    handleChangeHowMany = (value) => {
+        this.props.sethowMany(value);
+    }
     
     render() {
         return (
@@ -39,7 +46,7 @@ class S5ClaimedAnything extends Component {
                                     have You Claimed Anything Over The Past 3 years
                                 </h5> 
                                 <div className="row d-flex justify-content-center align-items-center" align="center">
-                                    <Switch /><br />
+                                    <Switch onChange={this.handleChangeClaimedAnything} /><br />
                                 </div>
                             </Form.Item>
                             <Form.Item>
@@ -49,6 +56,7 @@ class S5ClaimedAnything extends Component {
                                 <Select 
                                     size="large"
                                     placeholder="Select An Option"
+                                    onChange={this.handleChangeHowMany}
                                     optionFilterProp="children"
                                     filterOption={ (input,option) => option.children.toLowerCase.indexOf(input.toLowerCase()) >= 0
                                     }
