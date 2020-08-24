@@ -25,11 +25,14 @@ class S10Personalnfo extends Component {
                 <CommonComponents currentStep={this.props.currentStep} totalSteps={this.props.totalSteps} previousStep={this.props.previousStep} />
                 <div className="d-flex" style={{minHeight: "70vh"}}>
                     <div className="card-body d-flex justify-content-center align-items-center" align="center" >
-                        <Form className="w-50" >
+                        <Form className="mywidth" >
+                            
                             <Form.Item>
                                 <h3>
-                                    Personal Info
-                                </h3>
+                                    Confirm Submission
+                                </h3><br />
+                            </Form.Item>
+                            <Form.Item>
                                 <h5>
                                     City
                                 </h5>  
@@ -46,10 +49,25 @@ class S10Personalnfo extends Component {
                                     <Option value="excellent" >Excellent</Option>
                                 </Select>
                             </Form.Item>
+                            
                             <Form.Item>
-                                    <Button onClick={()=>{this.moveNext()}} type="primary" htmlType="submit" block size="large">
-                                        Next
-                                    </Button>
+                                <p className="text-justify" style={{color:"#777777", fontSize:"12px"}}>
+                                    By clicking "Get My Quote" I provide my electronic signature and express
+                                    written consent to telemarketing calls, text messages, emails, and postal
+                                    mail from this Web site
+                                    our marketing and re-marketing network, and up to eight insurance companies
+                                    or their affiliates or representatives at the phone number (including wireless number),
+                                    email address, and postal address provided by me. I consent to calls and text messages
+                                    transmitting insurance quotes, or seeking related additional information from me,
+                                    using an Automatic Telephone Dialing System or prerecorded or artificial voices.
+                                    I consent that my signature is not a condition of purchasing any property, goods,
+                                    or services and that I may revoke my consent at any time.
+                                </p>
+                            </Form.Item>
+                            <Form.Item >
+                                <Button onClick={() => { this.moveNext() }} type="primary" htmlType="submit" block size="large">
+                                    Get My Quote!
+                                </Button>
                             </Form.Item>
                         </Form>
                     </div>

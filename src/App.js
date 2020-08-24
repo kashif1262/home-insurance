@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import "./App.css";
+
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "antd/dist/antd.css";
+import "./App.css";
 import Logo from './Assets/logo.png';
 import S1OwnOrRent from "./components/S1OwnOrRent"; 
 import S2HomeType from "./components/S2HomeType";
@@ -83,12 +84,11 @@ class App extends Component {
 										setHouseBuiltYear=
 										{
 											(year)=>{
+												let {postData} =this.state
+												postData.houseBuiltYear = year
 												this.setState({
-													postData:{
-														houseBuiltYear:year
-													}
-												});
-												console.log(year);
+													postData:postData
+												}, () => {console.log(postData);});
 											}
 										}
 										setTypeOfProperty=
@@ -295,7 +295,6 @@ class App extends Component {
 											}
 										}
 									/>
-								<S11ConformSubmission />
 							</StepWizard> 
 						</div>
 					</div>

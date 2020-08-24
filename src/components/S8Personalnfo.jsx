@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import moment from 'moment';
 import { Form,  Button, Select,DatePicker, Space } from 'antd';
 import CommonComponents from './CommonComponents'; 
-const dateFormat = 'DD/MM/YYYY';  
+const dateFormat = 'MM/DD/YYYY';  
 const { Option } = Select; 
 class S8Personalnfo extends Component {
     state = {
@@ -12,7 +12,7 @@ class S8Personalnfo extends Component {
     CreateDateOfBirthSelect = () => {
         return (
             <Space className="w-100 text-center" direction="vertical" size={12} >
-                <DatePicker onChange={this.handleChangeDOB} className="w-100 text-center"   size="large" defaultValue={moment('2015/01/01', dateFormat)} format={dateFormat} />  
+                <DatePicker onChange={this.handleChangeDOB} className="w-100 text-center"  align="center" size="large" defaultValue={moment('08/01/2020', dateFormat)} format={dateFormat} />  
             </Space>
         );
     }
@@ -34,11 +34,11 @@ class S8Personalnfo extends Component {
                 <CommonComponents currentStep={this.props.currentStep} totalSteps={this.props.totalSteps} previousStep={this.props.previousStep} />
                 <div className="d-flex" style={{ minHeight: "70vh" }}>
                     <div className="card-body d-flex justify-content-center align-items-center" align="center" >
-                        <Form className="w-50" >
+                        <Form className="mywidth" >
                             <Form.Item>
                                 <h3>
                                     Personal Info
-                                </h3>
+                                </h3><br />
                                 <h5>
                                     Date Of Birth
                                 </h5>

@@ -54,9 +54,10 @@ class S2HomeType extends Component {
                 <CommonComponents currentStep={this.props.currentStep} totalSteps={this.props.totalSteps} previousStep={this.props.previousStep} />
                 <div className=" d-flex" style={{ minHeight: "70vh" }} >
                     <div className="card-body  d-flex justify-content-center align-items-center" align="center">
-                        <Form className="w-50" >
+                        <Form className="mywidth" >
                             <Form.Item>
                                 <h3>Tell Me a Little Bit About Your Home Type</h3>
+                                <br />
                                 <h5>When Was Your House Built</h5>
                                 <Select
                                     size="large"

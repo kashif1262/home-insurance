@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Form, Select, Button,Switch } from 'antd';
+import { Form, Select, Button} from 'antd';
 import CommonComponents from './CommonComponents';
+import BootstrapSwitchButton from 'bootstrap-switch-button-react'
 const {Option}=Select;
 class S5ClaimedAnything extends Component {
     state={
@@ -37,16 +38,27 @@ class S5ClaimedAnything extends Component {
                 <CommonComponents currentStep={this.props.currentStep} totalSteps={this.props.totalSteps} previousStep={this.props.previousStep} />
                 <div className="d-flex" style={{minHeight: "70vh"}}>
                     <div className="card-body d-flex justify-content-center align-items-center" align="center" >
-                        <Form className="w-50">
+                        <Form className="mywidth">
                             <Form.Item>
                                 <h3>
                                     Almost There!
-                                </h3>
+                                </h3><br />
                                 <h5>
                                     have You Claimed Anything Over The Past 3 years
                                 </h5> 
                                 <div className="row d-flex justify-content-center align-items-center" align="center">
-                                    <Switch onChange={this.handleChangeClaimedAnything} /><br />
+                                    
+                                <BootstrapSwitchButton
+                                        checked={false}
+                                        onlabel='Yes'
+                                        onstyle='ant-btn ant-btn-primary'
+                                        offlabel='No'
+                                        offstyle='secondary'
+                                        style='ant-btn-lg ant-btn-block mx-3 '
+                                        onChange={(checked: boolean) => {
+                                            this.setState({ isUserAdmin: checked })
+                                        }}
+                                    /><br />
                                 </div>
                             </Form.Item>
                             <Form.Item>

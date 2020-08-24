@@ -25,11 +25,11 @@ class S7Personalnfo extends Component {
                 <CommonComponents currentStep={this.props.currentStep} totalSteps={this.props.totalSteps} previousStep={this.props.previousStep} />
                 <div className="d-flex" style={{minHeight: "70vh"}}>
                     <div className="card-body d-flex justify-content-center align-items-center" align="center" >
-                        <Form className="w-50" >
+                        <Form className="mywidth" >
                             <Form.Item>
                                 <h3>
                                     Personal Info
-                                </h3>
+                                </h3><br />
                                 <h5>
                                     Phone Number
                                 </h5>  
