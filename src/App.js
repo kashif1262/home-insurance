@@ -72,8 +72,7 @@ class App extends Component {
 													postData:{
 														ownOrRent:value
 													}
-												})
-												console.log(value);
+												}) 
 											}
 										} 
 									/> 
@@ -97,8 +96,7 @@ class App extends Component {
 													postData:{
 														typeOfProperty:type
 													}
-												});
-												console.log(type);
+												}); 
 											}
 										}
 									/>  
@@ -111,8 +109,7 @@ class App extends Component {
 													postData:{
 														houseSizeInSquareFeet:value
 													}
-												})
-												console.log(value);
+												}) 
 											}
 										}
 										setNumberOfStroies={
@@ -121,8 +118,7 @@ class App extends Component {
 													postData:{
 														numberOfStroies:value
 													}
-												})
-												console.log(value);
+												}) 
 											}
 										}
 									/>
@@ -135,8 +131,7 @@ class App extends Component {
 													postData:{
 														insuredOrNot:value
 													}
-												})
-												console.log(value);
+												}) 
 											}
 										}
 										setcurrentInsuranceCompany={
@@ -145,8 +140,7 @@ class App extends Component {
 													postData:{
 														currentInsuranceCompany:value
 													}
-												})
-												console.log(value);
+												}) 
 											}
 										}
 									/>
@@ -159,8 +153,7 @@ class App extends Component {
 													postData:{
 														claimedAnything:value
 													}
-												})
-												console.log(value);
+												}) 
 											}
 										}
 										sethowMany={
@@ -169,8 +162,7 @@ class App extends Component {
 													postData:{
 														howMany:value
 													}
-												})
-												console.log(value);
+												}) 
 											}
 										}
 									/> 
@@ -183,8 +175,7 @@ class App extends Component {
 													personalInfo:{
 														firstName:value
 													}
-												})
-												console.log(value);
+												}) 
 											}
 										}
 										setLastName={
@@ -193,8 +184,7 @@ class App extends Component {
 													personalInfo:{
 														lastName:value
 													}
-												})
-												console.log(value);
+												}) 
 											}
 										}
 									/>
@@ -207,8 +197,7 @@ class App extends Component {
 													personalInfo:{
 														phone:value 
 													}
-												})
-												console.log(value);
+												}) 
 											}
 										} 
 										setEmail={
@@ -217,8 +206,7 @@ class App extends Component {
 													personalInfo:{
 														email: value
 													}
-												})
-												console.log(value);
+												}) 
 											}
 										}
 									/>
@@ -231,8 +219,7 @@ class App extends Component {
 													personalInfo:{
 														dateOfBirth: value
 													}
-												})
-												console.log(value);
+												}) 
 											}
 										} 
 										setGender={
@@ -241,8 +228,7 @@ class App extends Component {
 													personalInfo:{
 														gender:value
 													}
-												})
-												console.log(value);
+												}) 
 											}
 										}
 									/>
@@ -255,8 +241,7 @@ class App extends Component {
 													personalInfo:{
 														zipCode:value
 													}
-												})
-												console.log(value);
+												}) 
 											}
 										}
 										setAddress={
@@ -265,8 +250,7 @@ class App extends Component {
 													personalInfo:{
 														address:value
 													}
-												})
-												console.log(value);
+												}) 
 											}
 										}
 									/>
@@ -279,8 +263,7 @@ class App extends Component {
 													personalInfo:{
 														city:value
 													}
-												})
-												console.log(value);
+												}) 
 											}
 										}
 										setCraditRating={
@@ -290,7 +273,6 @@ class App extends Component {
 														craditRating:value
 													}
 												})
-												console.log(value);
 											}
 										}
 									/>
