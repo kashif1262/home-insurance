@@ -103,4 +103,3 @@ class S2HomeType extends Component {
 }
 
 export default S2HomeType;
-

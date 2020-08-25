@@ -49,15 +49,13 @@ class S5ClaimedAnything extends Component {
                                 <div className="row d-flex justify-content-center align-items-center" align="center">
                                     
                                 <BootstrapSwitchButton
-                                        checked={false}
+                                        checked={this.props.claimedAnything}
                                         onlabel='Yes'
                                         onstyle='ant-btn ant-btn-primary'
                                         offlabel='No'
                                         offstyle='secondary'
                                         style='ant-btn-lg ant-btn-block mx-3 '
-                                        onChange={(checked: boolean) => {
-                                            this.setState({ isUserAdmin: checked })
-                                        }}
+                                        onChange={this.handleChangeClaimedAnything}
                                     /><br />
                                 </div>
                             </Form.Item>

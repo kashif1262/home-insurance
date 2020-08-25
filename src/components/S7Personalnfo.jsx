@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Form, Input, Button } from 'antd';
 import CommonComponents from './CommonComponents';
 
-
 class S7Personalnfo extends Component {
     state={
 

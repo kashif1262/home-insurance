@@ -14,8 +14,7 @@ import S6Personalnfo from "./components/S6Personalnfo";
 import S7Personalnfo from "./components/S7Personalnfo";
 import S8Personalnfo from "./components/S8Personalnfo";
 import S9Personalnfo from "./components/S9Personalnfo";
-import S10Personalnfo from "./components/S10Personalnfo";
-import S11ConformSubmission from './components/S11ConformSubmission';
+import S10Personalnfo from "./components/S10Personalnfo"; 
 class App extends Component {
 	state={
 		postData:{
@@ -26,7 +25,7 @@ class App extends Component {
 			houseSizeInSquareFeet:'',
 			insuredOrNot:false,
 			currentInsuranceCompany:'',
-			claimedAnything:0,
+			claimedAnything:'',
 			howMany:''
 		},
 		personalInfo:{
@@ -130,7 +129,7 @@ class App extends Component {
 									<S4AboutInsurance
 										insuredOrNot={this.state.postData.insuredOrNot}
 										currentInsuranceCompany={this.state.postData.currentInsuranceCompany}
-										setinsuredOrNot={
+										setInsuredOrNot={
 											(value)=>{
 												this.setState({
 													postData:{

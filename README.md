@@ -5,13 +5,11 @@
 - SEE TODO FOR MISSING ITEMS
 - SERVER LOAD TIME IS HUGE - MINIFY SCRIPTS OR CALLING
 
-
 ### TO DO:
 
 - User Agent
 - Trusted Form URL
 - Lead ID Token
-
 
 ### Future Plans
 
@@ -19,8 +17,6 @@
 - Make Media alpha more "personal"
 - add URL PARAM after each question
 - Update CarQuery for 2020
-
-
 
 ### Netlify Server 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/6690166b-4070-4c28-98e6-22ca69d9d5bc/deploy-status)](https://app.netlify.com/sites/quotehoundauto/deploys)
@@ -61,4 +57,3 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-

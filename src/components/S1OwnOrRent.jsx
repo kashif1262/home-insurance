@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Form, Select, Button } from 'antd';
-import CommonComponents from './CommonComponents';
-import {Heading} from './CommonComponents';
+import CommonComponents from './CommonComponents'; 
 const {Option} = Select;
 class S1OwnOrRent extends Component {
     constructor(props) {
@@ -10,9 +9,7 @@ class S1OwnOrRent extends Component {
             val:""
         };
     }
-    
-    
-    
+
     onFinish = () => {
         this.props.nextStep()
     };
