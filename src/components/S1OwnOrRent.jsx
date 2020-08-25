@@ -23,8 +23,8 @@ class S1OwnOrRent extends Component {
             <div className="card shadow-lg  " style={{ minHeight: "80vh" }}>
               <CommonComponents currentStep={this.props.currentStep} totalSteps={this.props.totalSteps} previousStep={this.props.previousStep} />
                 
-                <div className=" d-flex" style={{ minHeight: "70vh" }} > 
-                    <div className="card-body d-flex justify-content-center align-items-center" align="center">
+                <div className=" d-xl-flex d-sm-flex" style={{ minHeight: "70vh" }} > 
+                    <div className="card-body d-xl-flex justify-content-center align-items-center" align="center">
                         <Form className="mywidth" onFinish={this.onFinish}>
                             <h3>Do You Own Or Rent</h3><br />
                             <Form.Item>
